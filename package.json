@@ -1,0 +1,21 @@
+{
+  "name": "@adventure/js-utilities",
+  "description": "Contains several helpers and utilities for JavaScript",
+  "license": "UNLICENSED",
+  "version": "0.1.0",
+  "author": "RYZE Digital GmbH <kontakt@ryze-digital.de> (https://www.ryze-digital.de/)",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "lint": "eslint src/**",
+    "lint-fix": "npm run lint -- --fix"
+  },
+  "keywords": [
+    "js",
+    "javascript",
+    "utilities"
+  ],
+  "devDependencies": {
+    "@ryze-digital/eslint-config-website": "^1.0.0-beta.1"
+  }
+}
