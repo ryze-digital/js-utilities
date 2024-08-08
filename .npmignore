@@ -1,3 +1,1 @@
-docs
-.eslintignore
-.eslintrc
+eslint.config.js
