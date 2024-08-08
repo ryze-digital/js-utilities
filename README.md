@@ -1,31 +1,27 @@
-# Adventure JavaScript Utilities
+# RYZE Digital JavaScript Utilities
 
-## Installation
+## Install
 
 ```sh
-npm i @adventure/js-utilities
+npm i @ryze-digital/js-utilities
 ```
 
-## Anwendung
+## Usage
 
 ```js
-import * as adventure from '@adventure/js-utilities';
+import * as utils from '@ryze-digital/js-utilities';
 ```
 
-## Beispiel
+## Example
 
 ```js
-this.breakpointProvider = new adventure.BreakpointProvider();
+this.breakpointProvider = new utils.BreakpointProvider();
 
 window.matchMedia(`(min-width: ${this.breakpointProvider.breakpoints.large})`).addListener(() => {
-    // Listener wird ausgeführt, wenn der Viewport auf "large" vergrößert wird
+    // Code gets executed when the viewport is at least "large"
 });
 
 if (window.matchMedia(`(max-width: ${this.breakpointProvider.breakpoints.medium})`).matches) {
-    // Bedingung ist erfüllt, wenn der Viewport maximal so breit ist wie "medium"
+    // Condition evaluates to true, if the viewport is at most "medium"
 }
 ```
-
-## API-Dokumentation
-
-Nähere Details zu den Klassen und Funktionen findest du auf [adventure.docs.lan/js-utilities/](http://adventure.docs.lan/js-utilities/).
