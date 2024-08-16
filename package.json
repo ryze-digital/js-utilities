@@ -6,6 +6,7 @@
   "author": "RYZE Digital GmbH <kontakt@ryze-digital.de> (https://www.ryze-digital.de/)",
   "main": "index.js",
   "type": "module",
+  "repository": "github:ryze-digital/js-utilities",
   "scripts": {
     "lint": "eslint src/**",
     "lint-fix": "npm run lint -- --fix"
