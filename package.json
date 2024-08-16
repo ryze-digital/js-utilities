@@ -17,6 +17,6 @@
     "utilities"
   ],
   "devDependencies": {
-    "@ryze-digital/eslint-config-website": "^1.0.0-beta.1"
+    "@ryze-digital/eslint-config-website": "^1.0.0-beta.2"
   }
 }
