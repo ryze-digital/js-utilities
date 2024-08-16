@@ -1,6 +1,5 @@
 /**
  * DOM-Zugriffe, die nicht mit CSS möglich sind
- *
  * @example
  * document.querySelector('button').addEventListener('click', (event) => {
  *     const siblings = adventure.Selectors.siblings(event.target);

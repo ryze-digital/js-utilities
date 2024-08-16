@@ -1,6 +1,5 @@
 /**
  * Stellt in adventure-scss definierte Breakpoints im JavaScript zur Verfügung
- *
  * @example
  * const {breakpoints} = new adventure.BreakpointProvider();
  *

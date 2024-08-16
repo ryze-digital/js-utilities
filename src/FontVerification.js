@@ -1,6 +1,5 @@
 /**
  * Verifiziert ein Fonts.net Projekt asynchron
- *
  * @example
  * new adventure.FontVerification('your fonts.net project ID');
  */

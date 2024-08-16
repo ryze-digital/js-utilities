@@ -1,6 +1,5 @@
 /**
  * Setzt Klasse während ein Element "sticky" ist
- *
  * @see https://davidwalsh.name/detect-sticky
  * @example
  * const element = document.getElementById('id');

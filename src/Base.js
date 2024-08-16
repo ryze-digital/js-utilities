@@ -1,7 +1,6 @@
 /**
  * Basis-Klasse zur einheitlichen Verwendung von Events und Optionen.
  * Jede Adventure-Komponente leitet von dieser Basis-Klasse ab.
- *
  * @example
  * export class Example extends adventure.Base {
  *     constructor () {
@@ -100,7 +99,7 @@ export class Base {
 
     /**
      * @param {string} name
-     * @param {object} [data={}]
+     * @param {object} [data]
      * @param {Element} el
      */
     emitEvent(name = '', data = {}, el = this.options.el) {
@@ -113,7 +112,6 @@ export class Base {
 
     /**
      * Fügt einem oder mehreren Elementen ein Event hinzu.
-     *
      * @param {Node|NodeList} selector
      * @param {string} eventName
      * @param {Function} callback
@@ -132,7 +130,6 @@ export class Base {
 
     /**
      * Entfernt einem Element oder mehreren Elementen das übergebene Event.
-     *
      * @param {Node|NodeList} selector
      * @param {string} [eventName] - Kann ausgelassen werden, um alle Events zu entfernen.
      */

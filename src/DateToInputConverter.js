@@ -1,6 +1,5 @@
 /**
  * Konvertiert ein Date-Objekt zur Verwendung mit input[type="date"] und input[type="time"]
- *
  * @example
  * const dateToInputConverter = new adventure.DateToInputConverter();
  *
@@ -8,7 +7,7 @@
  */
 export class DateToInputConverter {
     constructor() {
-        // eslint-disable-next-line prefer-rest-params
+         
         this.dateObj = new Date(...arguments);
     }
 

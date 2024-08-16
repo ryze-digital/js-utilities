@@ -1,6 +1,5 @@
 /**
  * Reduziert Funktionsaufrufe
- *
  * @example
  * window.addEventListener('resize', adventure.ReduceFunctionCalls.throttle(() => {...}));
  */
