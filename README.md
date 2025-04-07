@@ -5,7 +5,7 @@
 ## Install
 
 ```sh
-npm i @ryze-digital/js-utilities
+npm i @ryze-digital/js-utilities --save
 ```
 
 ## Usage
