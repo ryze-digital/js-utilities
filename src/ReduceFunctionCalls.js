@@ -12,11 +12,11 @@ export class ReduceFunctionCalls {
      * @returns {Function}
      * @see https://codeburst.io/throttling-and-debouncing-in-javascript-b01cad5c8edf
      */
-    static throttle(callback, delay = 250, scope = this, ...args) {
+    static throttle(callback, delay = 250, scope = this) {
         let timeout;
         let lastRan;
 
-        return () => {
+        return (...args) => {
             if (!lastRan) {
                 callback.apply(scope, args);
                 lastRan = Date.now();
@@ -41,10 +41,10 @@ export class ReduceFunctionCalls {
      * @returns {Function}
      * @see https://davidwalsh.name/javascript-debounce-function
      */
-    static debounce(callback, delay = 250, scope = this, ...args) {
+    static debounce(callback, delay = 250, scope = this) {
         let timeout;
 
-        return () => {
+        return (...args) => {
             const debouncedCallback = () => {
                 timeout = null;
 
