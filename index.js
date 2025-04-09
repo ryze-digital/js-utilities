@@ -5,6 +5,7 @@ import {DetectSticky} from './src/DetectSticky.js';
 import {FontVerification} from './src/FontVerification.js';
 import {ReduceFunctionCalls} from './src/ReduceFunctionCalls.js';
 import {Selectors} from './src/Selectors.js';
+import {Tracker} from './src/Tracker.js';
 
 export {
     Base,
@@ -13,5 +14,6 @@ export {
     DetectSticky,
     FontVerification,
     ReduceFunctionCalls,
-    Selectors
+    Selectors,
+    Tracker
 };
