@@ -8,7 +8,6 @@ export class ReduceFunctionCalls {
      * @param {Function} callback
      * @param {number} delay
      * @param {object} scope
-     * @param {Array} args
      * @returns {Function}
      * @see https://codeburst.io/throttling-and-debouncing-in-javascript-b01cad5c8edf
      */
@@ -37,7 +36,6 @@ export class ReduceFunctionCalls {
      * @param {Function} callback
      * @param {number} delay
      * @param {object} scope
-     * @param {Array} args
      * @returns {Function}
      * @see https://davidwalsh.name/javascript-debounce-function
      */
