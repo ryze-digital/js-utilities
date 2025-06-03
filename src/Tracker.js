@@ -3,8 +3,8 @@ export class Tracker {
      * @type {object}
      */
     #trackingProviderMapping = {
-        'matomo': '_paq'
-        // other provider can be integrated like this: 'googleAnalytics': 'gtag'
+        'matomo': '_paq',
+        'googleAnalytics': 'gtag'
     };
 
     /**
@@ -14,6 +14,10 @@ export class Tracker {
 
     constructor() {
         this.#setTrackingProvider();
+
+        if (this.#trackingProvider.length === 0) {
+            console.warn('No tracking provider detected');
+        }
     }
 
     /**
@@ -24,8 +28,17 @@ export class Tracker {
      */
     track(category, action, name, value) {
         this.#trackingProvider.forEach((trackingProvider) => {
-            if (trackingProvider === 'matomo') {
-                window[this.#trackingProviderMapping[trackingProvider]].push(['trackEvent', category, action, name, value]);
+            switch (trackingProvider) {
+                case 'matomo':
+                    window[this.#trackingProviderMapping[trackingProvider]].push(['trackEvent', category, action, name, value]);
+                    break;
+                case 'googleAnalytics':
+                    window[this.#trackingProviderMapping[trackingProvider]]('event', action, {
+                        event_category: category,
+                        event_label: name,
+                        value: value
+                    });
+                    break;
             }
         });
     }
