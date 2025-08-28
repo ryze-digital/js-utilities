@@ -1,6 +1,7 @@
 import {Base} from './src/Base.js';
 import {BreakpointProvider} from './src/BreakpointProvider.js';
 import {DateToInputConverter} from './src/DateToInputConverter.js';
+import {DeepMerge} from './src/DeepMerge.js';
 import {DetectSticky} from './src/DetectSticky.js';
 import {FontVerification} from './src/FontVerification.js';
 import {ReduceFunctionCalls} from './src/ReduceFunctionCalls.js';
@@ -11,6 +12,7 @@ export {
     Base,
     BreakpointProvider,
     DateToInputConverter,
+    DeepMerge,
     DetectSticky,
     FontVerification,
     ReduceFunctionCalls,
