@@ -10,7 +10,7 @@
   "scripts": {
     "lint": "eslint src/**",
     "lint-fix": "npm run lint -- --fix",
-    "test": "jest"
+    "test": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js"
   },
   "keywords": [
     "js",
