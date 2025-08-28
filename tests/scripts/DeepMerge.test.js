@@ -56,6 +56,7 @@ describe('DeepMerge.merge', () => {
 
     it('skips null/undefined sources', () => {
         const result = DeepMerge.merge(true, { a: 1 }, null, undefined, { b: 2 });
+
         expect(result).toEqual({ a: 1, b: 2 });
     });
 
@@ -74,17 +75,20 @@ describe('DeepMerge.merge', () => {
 
     it('treats invalid target as plain object by default', () => {
         const result = DeepMerge.merge(null, { a: 1 });
+
         expect(result).toEqual({ a: 1 });
     });
 
     it('converts target to array when merging arrays into a non-array target (default deep)', () => {
         const result = DeepMerge.merge({}, [1, 2]);
+
         expect(Array.isArray(result)).toBe(true);
         expect(result).toEqual([1, 2]);
     });
 
     it('converts target to object when merging object into an array target (default deep)', () => {
         const result = DeepMerge.merge([], { a: 1 });
+
         expect(Array.isArray(result)).toBe(false);
         expect(result).toEqual({ a: 1 });
     });
