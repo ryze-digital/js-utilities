@@ -1,5 +1,6 @@
 export class DeepMerge {
     /**
+     * @private
      * @param {*} value
      * @returns {boolean}
      */
@@ -14,6 +15,7 @@ export class DeepMerge {
     }
 
     /**
+     * @private
      * @param {string} key
      * @returns {boolean}
      */
@@ -27,6 +29,7 @@ export class DeepMerge {
      */
 
     /**
+     * @private
      * @param {object} target
      * @param {string} key
      * @param {*} value
@@ -61,6 +64,7 @@ export class DeepMerge {
     }
 
     /**
+     * @private
      * @param {Array} target
      * @param {Array} source
      * @param {boolean} deep
@@ -97,6 +101,7 @@ export class DeepMerge {
     }
 
     /**
+     * @private
      * @param {object} target
      * @param {object} source
      * @param {boolean} deep
