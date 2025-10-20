@@ -1,3 +1,5 @@
+import { DeepMerge } from './DeepMerge.js';
+
 /**
  * Basis-Klasse zur einheitlichen Verwendung von Events und Optionen.
  * Jede Adventure-Komponente leitet von dieser Basis-Klasse ab.
@@ -25,10 +27,7 @@ export class Base {
      * @returns {object}
      */
     get options() {
-        return {
-            ...this._defaultOptions,
-            ...this._options
-        };
+        return DeepMerge.merge({}, this._defaultOptions, this._options);
     }
 
     /**
