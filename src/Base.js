@@ -27,7 +27,7 @@ export class Base {
      * @returns {object}
      */
     get options() {
-        return DeepMerge.merge({}, this._defaultOptions, this._options);
+        return DeepMerge.merge(this._defaultOptions, this._options);
     }
 
     /**
