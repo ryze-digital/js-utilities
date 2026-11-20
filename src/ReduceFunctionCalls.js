@@ -22,12 +22,15 @@ export class ReduceFunctionCalls {
             } else {
                 clearTimeout(timeout);
 
-                timeout = setTimeout(() => {
-                    if ((Date.now() - lastRan) >= delay) {
-                        callback.apply(scope, args);
-                        lastRan = Date.now();
-                    }
-                }, delay - (Date.now() - lastRan));
+                timeout = setTimeout(
+                    () => {
+                        if (Date.now() - lastRan >= delay) {
+                            callback.apply(scope, args);
+                            lastRan = Date.now();
+                        }
+                    },
+                    delay - (Date.now() - lastRan),
+                );
             }
         };
     }

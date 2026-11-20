@@ -14,7 +14,7 @@ export class DetectSticky {
         this._el = el;
         this._observer = this._getObserver();
 
-        this._el.style.top = '-1px';
+        this._el.style.top = "-1px";
 
         this._observer.observe(this._el);
     }
@@ -24,11 +24,14 @@ export class DetectSticky {
      * @returns {IntersectionObserver}
      */
     _getObserver() {
-        return new IntersectionObserver(([{ target, intersectionRatio }]) => {
-            target.classList.toggle('is-sticky', intersectionRatio < 1);
-        }, {
-            threshold: [1]
-        });
+        return new IntersectionObserver(
+            ([{ target, intersectionRatio }]) => {
+                target.classList.toggle("is-sticky", intersectionRatio < 1);
+            },
+            {
+                threshold: [1],
+            },
+        );
     }
 
     /**
