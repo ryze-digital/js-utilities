@@ -5,7 +5,7 @@ export class DeepMerge {
      * @returns {boolean}
      */
     static _isPlainObject(value) {
-        if (value === null || typeof value !== 'object') {
+        if (value === null || typeof value !== "object") {
             return false;
         }
 
@@ -20,7 +20,7 @@ export class DeepMerge {
      * @returns {boolean}
      */
     static _isUnsafeKey(key) {
-        return key === '__proto__' || key === 'constructor' || key === 'prototype';
+        return key === "__proto__" || key === "constructor" || key === "prototype";
     }
 
     /**
@@ -124,7 +124,7 @@ export class DeepMerge {
         let target;
         let sources;
 
-        if (typeof args[0] === 'boolean') {
+        if (typeof args[0] === "boolean") {
             [deep, target, ...sources] = args;
         } else {
             [target, ...sources] = args;

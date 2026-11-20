@@ -3,8 +3,8 @@ export class Tracker {
      * @type {object}
      */
     #trackingProviderMapping = {
-        'matomo': '_paq',
-        'googleAnalytics': 'gtag'
+        matomo: "_paq",
+        googleAnalytics: "gtag",
     };
 
     /**
@@ -16,7 +16,7 @@ export class Tracker {
         this.#setTrackingProvider();
 
         if (this.#trackingProvider.length === 0) {
-            console.warn('No tracking provider detected');
+            console.warn("No tracking provider detected");
         }
     }
 
@@ -29,14 +29,20 @@ export class Tracker {
     track(category, action, name, value) {
         this.#trackingProvider.forEach((trackingProvider) => {
             switch (trackingProvider) {
-                case 'matomo':
-                    window[this.#trackingProviderMapping[trackingProvider]].push(['trackEvent', category, action, name, value]);
+                case "matomo":
+                    window[this.#trackingProviderMapping[trackingProvider]].push([
+                        "trackEvent",
+                        category,
+                        action,
+                        name,
+                        value,
+                    ]);
                     break;
-                case 'googleAnalytics':
-                    window[this.#trackingProviderMapping[trackingProvider]]('event', action, {
+                case "googleAnalytics":
+                    window[this.#trackingProviderMapping[trackingProvider]]("event", action, {
                         event_category: category,
                         event_label: name,
-                        value: value
+                        value: value,
                     });
                     break;
             }
@@ -45,7 +51,7 @@ export class Tracker {
 
     #setTrackingProvider() {
         Object.keys(this.#trackingProviderMapping).forEach((trackingProvider) => {
-            if (typeof window[this.#trackingProviderMapping[trackingProvider]] !== 'undefined') {
+            if (typeof window[this.#trackingProviderMapping[trackingProvider]] !== "undefined") {
                 this.#trackingProvider.push(trackingProvider);
             }
         });

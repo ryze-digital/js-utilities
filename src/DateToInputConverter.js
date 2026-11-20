@@ -7,7 +7,6 @@
  */
 export class DateToInputConverter {
     constructor() {
-         
         this.dateObj = new Date(...arguments);
     }
 

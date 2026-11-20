@@ -1,4 +1,4 @@
-import { DeepMerge } from './DeepMerge.js';
+import { DeepMerge } from "./DeepMerge.js";
 
 /**
  * Basis-Klasse zur einheitlichen Verwendung von Events und Optionen.
@@ -49,12 +49,14 @@ export class Base {
     _attachEvent(element, eventName, callback) {
         if (this._eventListeners.has(element)) {
             this._eventListeners.get(element).push({
-                [eventName]: callback
+                [eventName]: callback,
             });
         } else {
-            this._eventListeners.set(element, [{
-                [eventName]: callback
-            }]);
+            this._eventListeners.set(element, [
+                {
+                    [eventName]: callback,
+                },
+            ]);
         }
         element.addEventListener(eventName, callback);
     }
@@ -80,12 +82,12 @@ export class Base {
         const allListenersForElement = this._eventListeners.get(element);
 
         allListenersForElement.forEach((listener, index) => {
-            if (eventName === '') {
+            if (eventName === "") {
                 this._detachEvent(element, Object.keys(listener)[0], Object.values(listener)[0], index);
             } else {
                 const callback = listener[eventName];
 
-                if (typeof callback === 'function') {
+                if (typeof callback === "function") {
                     this._detachEvent(element, eventName, callback, index);
                 }
             }
@@ -101,9 +103,9 @@ export class Base {
      * @param {object} [data]
      * @param {Element} el
      */
-    emitEvent(name = '', data = {}, el = this.options.el) {
+    emitEvent(name = "", data = {}, el = this.options.el) {
         const event = new CustomEvent(name, {
-            detail: data
+            detail: data,
         });
 
         el.dispatchEvent(event);
@@ -132,7 +134,7 @@ export class Base {
      * @param {Node|NodeList} selector
      * @param {string} [eventName] - Kann ausgelassen werden, um alle Events zu entfernen.
      */
-    off(selector, eventName = '') {
+    off(selector, eventName = "") {
         if (this._isNodeList(selector)) {
             selector.forEach((element) => {
                 this._detachEvents(element, eventName);
@@ -147,7 +149,7 @@ export class Base {
      */
     offAll() {
         this._eventListeners.forEach((allListenersForElement, element) => {
-            this._detachEvents(element, '');
+            this._detachEvents(element, "");
         });
     }
 }

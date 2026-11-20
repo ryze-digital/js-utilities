@@ -8,8 +8,10 @@
   "type": "module",
   "repository": "github:ryze-digital/js-utilities",
   "scripts": {
-    "lint": "eslint src/** tests/**",
-    "lint-fix": "npm run lint -- --fix",
+    "lint": "npm run lint:scripts",
+    "lint:scripts": "prettier src tests/scripts ./*.js --check && eslint src tests/scripts ./*.js",
+    "lint-fix": "npm run lint-fix:scripts",
+    "lint-fix:scripts": "prettier src tests/scripts ./*.js --write && npm run lint:scripts -- --fix",
     "test": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js"
   },
   "keywords": [
@@ -18,7 +20,12 @@
     "utilities"
   ],
   "devDependencies": {
-    "@ryze-digital/eslint-config-website": "^1.0.1",
-    "jest": "^30.2.0"
+    "@ryze-digital/eslint-config-website": "^2.0.0",
+    "@ryze-digital/prettier-config-website": "^2.0.0",
+    "jest": "^30.5.2"
+  },
+  "engines": {
+    "node": ">=24.15",
+    "npm": ">=11"
   }
 }
