@@ -23,5 +23,9 @@
     "@ryze-digital/eslint-config-website": "^2.0.0",
     "@ryze-digital/prettier-config-website": "^2.0.0",
     "jest": "^30.5.2"
+  },
+  "engines": {
+    "node": ">=24.15",
+    "npm": ">=11"
   }
 }
